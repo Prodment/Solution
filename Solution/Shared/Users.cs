@@ -23,4 +23,10 @@ namespace Solution.Shared
         [ForeignKey("RoleId")]
         public Roles Roles { get; set; }
     }
+
+    public class AuthResponse
+    {
+        public string Token { get; set; }
+        public string RefreshToken { get; set; }
+    }
 }

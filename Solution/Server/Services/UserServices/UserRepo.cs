@@ -24,8 +24,7 @@ namespace Solution.Server.Services.UserServices
             {
                 user.Password = "Solution@1";
                 user.Created = DateTime.Now;
-                //var role = await _context.Role.AsNoTracking().FirstOrDefaultAsync(a => a.Id.Equals(user.Roles.Id));
-                //user.Roles = role;
+                user.Roles =  await _context.Role.FirstOrDefaultAsync(a => a.Id.Equals(user.Roles.Id));
                 _context.Add(user);
                 await _context.SaveChangesAsync();
             }

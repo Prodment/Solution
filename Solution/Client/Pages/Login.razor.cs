@@ -24,7 +24,7 @@ namespace Solution.Client.Pages
         {
             if (await _httpRepo.Login(user))
             {
-                Navigation.NavigateTo("/");
+                Navigation.NavigateTo("/",true);
             }
                 
 

@@ -8,20 +8,15 @@ using System.Threading.Tasks;
 
 namespace Solution.Client.ClientComponent
 {
-    public partial class CreateProfile
+    public partial class UserProfile
     {
         [Inject]
-        public IAccountHttpRepo _repo { get; set; }
+        public IAccountHttpRepo repo { get; set; }
 
         [Parameter]
         public Guid ProfileGID { get; set; }
 
-        Profile profile = new Profile();
-
-        public List<Roles> roles = new List<Roles>();
-        protected async override Task OnInitializedAsync()
-        {
-            roles = await _repo.GetRoles();
-        }
+        //[Parameter]
+        public Profile objProfile { get; set; } = new Profile();
     }
 }

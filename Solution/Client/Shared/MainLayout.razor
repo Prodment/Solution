@@ -12,10 +12,11 @@
         <div class="w3-container w3-bar w3-light-grey">
             <AuthorizeView>
                 <Authorized>
-                    <p href="#">@context.User.Identity.Name</p>
+                    <a href="#" class="w3-bar-item w3-button w3-right">@context.User.Identity.Name</a>
                 </Authorized>
                 <NotAuthorized>
-                     <a href="account/login" class="w3-right-align">Login</a>
+                    <a href="account/login" class="w3-bar-item w3-button w3-right">Login</a>
+                   
                 </NotAuthorized>
             </AuthorizeView>
         

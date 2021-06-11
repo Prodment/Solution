@@ -15,7 +15,7 @@ namespace Solution.Client.ClientServices.Account
         private readonly HttpClient _http;
 
         public HttpResponseMessage response = new HttpResponseMessage();
-        public Profile profile = new Profile();
+      
         public string result = "";
 
         public AccountHttpRepo(HttpClient http)

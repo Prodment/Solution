@@ -40,7 +40,7 @@ namespace Solution.Server.Controllers
 
             return Created("",user);
         }
-        [HttpPost("Account/Login")]
+        [HttpPost("account/login")]
         public async Task<ActionResult<Users>> GetAccess([FromBody] Users user)
         {
             var details = await _user.Access(user);
@@ -71,15 +71,19 @@ namespace Solution.Server.Controllers
 
         }
 
-        [HttpGet("UserState")]
+        [HttpGet("userstate")]
         public async Task<ActionResult<Users>> UserState()
         {
             Users user = new Users();
+            Roles role = new Roles();
             if (User.Identity.IsAuthenticated)
             {
+                role.DescriptionType = (User.FindFirstValue(ClaimTypes.Role));
+                user.Roles = role;
                 user.Email = User.FindFirstValue(ClaimTypes.Name);
                 user.GID = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
-                //user.Roles = ;
+                
+                
             }
                
 

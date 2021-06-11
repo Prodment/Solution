@@ -29,6 +29,7 @@ namespace Solution.Shared
     {
         [Key]
         public Guid GID { get; set; }
+        public string ResidentialCountry { get; set; }
         public string City { get; set; }
         public string Surburb { get; set; }
         public string ResidentialAddress { get; set; }

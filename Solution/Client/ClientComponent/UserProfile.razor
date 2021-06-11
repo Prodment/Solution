@@ -1,0 +1,69 @@
+﻿@page "/profile"
+
+@*<EditForm Model="objProfile">*@
+    <div class="w3-container">
+        <div class="w3-row">
+            <div class="w3-col s12 m4 l3 w3-padding-16">
+                <div class="w3-card-4">
+                    <img src="" class="w3-image" alt="My Profile Image" />
+                </div>
+                <hr />
+                <div>
+                    <input type="text" placeholder="Nationality" class="form-h4 w3-input" @bind-value="objProfile.Nationality" />
+                    <hr />
+                    <div class="w3-row-padding">
+                        <div class="w3-third">
+                            <input type="text" class="w3-input" placeholder="Residential Country" @bind-value="objProfile.Address.ResidentialCountry" />
+                        </div>
+                        <div class="w3-third">
+                            <input type="text" class="w3-input" placeholder="Street Address" @bind-value="objProfile.Address.ResidentialAddress" />
+                        </div>
+                        <div class="w3-third">
+                            <input type="text" class="w3-input" placeholder="City" @bind-value="objProfile.Address.City" />
+                        </div>
+                        <div class="w3-third">
+                            <input type="text" class="w3-input" placeholder="Surburb" @bind-value="objProfile.Address.Surburb" />
+                        </div>
+                        <div class="w3-third">
+                            <input type="text" class="w3-input" placeholder="Postal Address" @bind-value="objProfile.Address.PostalAddress" />
+                        </div>
+
+                    </div>
+
+                    <p>@objProfile.Address.ResidentialCountry, @objProfile.Address.City, @objProfile.Address.Surburb, @objProfile.Address.PostalAddress</p>
+                </div>
+                <div>
+                    <h4>Agent</h4>
+                    <h6>Manager</h6>
+                    <p>079 022 0000</p>
+                    <p>thabiso.nyathela@yahoo.com</p>
+                </div>
+            </div>
+            <div class="w3-col s12 m8 l9 w3-padding-16">
+                <div class="my-info  w3-panel">
+                    <h4>Thabiso Nyathela</h4>
+                    <input type="text" @bind-value="objProfile.KnownAs" placeholder="Also Known As" />
+
+                    <textarea class="w3-input w3-border" style="resize:none" @bind="objProfile.Biography">
+                 I'm an young artist from a small town called lova asa'mbe grow up and small shack producing music using a just a microphone and mini radio donated to me by my mom's mulungu
+
+                    </textarea>
+                </div>
+
+                <div class=" w3-panel">
+                    <h5>About</h5>
+                    <hr />
+                    <p><span>Phone : </span> 0761994752</p>
+                    <p><span>Email : </span> gnyathela@gmail.com</p>
+                    <p><span>Instagram  : </span> gnyathela@gmail.com</p>
+                    <p><span>Facebook  : </span> gnyathela@gmail.com</p>
+                    <p><span>Twitter  : </span> gnyathela@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+@*</EditForm>*@
+
+
