@@ -1,0 +1,33 @@
+﻿@inherits LayoutComponentBase
+
+
+
+<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
+    <NavMenu />
+</div>
+
+<div class="w3-main" style="margin-left:200px">
+    <div class="w3-teal">
+        <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+        <div class="w3-container w3-bar w3-light-grey">
+            <AuthorizeView>
+                <Authorized>
+                    <p href="#">@context.User.Identity.Name</p>
+                </Authorized>
+                <NotAuthorized>
+                     <a href="account/login" class="w3-right-align">Login</a>
+                </NotAuthorized>
+            </AuthorizeView>
+        
+        </div>
+    </div>
+
+    <div class="w3-container">
+        @Body
+    </div>
+
+</div>
+
+
+
+

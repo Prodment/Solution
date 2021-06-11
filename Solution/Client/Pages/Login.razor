@@ -1,0 +1,31 @@
+﻿@page "/Account/Login"
+@layout Solution.Client.Shared.BlankLayout
+
+<EditForm Model="user" OnValidSubmit="UserLogin">
+
+    <div class="form-background">
+       @if(Response == "")
+       {
+           <p class="w3-red">@Response</p>
+       }
+        <div class="w3-row w3-section">
+            <div class="w3-col" style="width:50px"><i class="w3-small fas fa-user-tie"></i></div>
+            <div class="w3-rest">
+                <input type="text" class="w3-input" @bind-value="user.Email" placeholder="Email Address" />
+            </div>
+        </div>
+        <div class="w3-row w3-section">
+            <div class="w3-col" style="width:50px"><i class="w3-small fas fa-user-tie"></i></div>
+            <div class="w3-rest">
+                <input type="password" class="w3-input" @bind-value="user.Password" placeholder="Password" />
+            </div>
+        </div>
+
+        <input type="submit" class="w3-button w3-green" value="Login" />
+    </div>
+    
+
+</EditForm>
+@code {
+
+}

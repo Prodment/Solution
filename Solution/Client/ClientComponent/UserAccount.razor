@@ -1,0 +1,44 @@
+﻿@page "/Useraccount"
+
+<EditForm Model="objuser" OnValidSubmit="Save">
+    <div class="w3-container">
+        <div class="w3-row-padding">
+
+            <div class="w3-col s12 m6">
+                <input class="w3-input" type="text" placeholder="Name" @bind-value="objuser.Name"/>
+            </div>
+            <div class="w3-col s12 m6">
+                <input class="w3-input" type="text" placeholder="Surname" @bind-value="objuser.Surname"/>
+            </div>
+            <div class="w3-col s12 m6">
+                <input class="w3-input" type="text" placeholder="Email" @bind-value="objuser.Email"/>
+            </div>
+            @*<div class="w3-col s12 m6">
+                <input class="w3-input" type="text" placeholder="Contact" @bind-value="objuser.Profile"/>
+            </div>*@
+
+        </div>
+        <div class="w3-row-padding">
+            <h5>User's Role</h5>
+            <div class="w3-col s12">
+                <select class="w3-input" @bind="RoleId">
+                    <option value="0">---Select Role---</option>
+                    @if (lstroles.Count > 0)
+                    {
+                        @foreach (var item in lstroles)
+                        {
+                            <option value="@item.Id.ToString()">@item.DescriptionType</option>
+                        }
+                    }
+
+                </select>
+            </div>
+        </div>
+        <div class="w3-row-padding">
+            <div class="w3-col s12">
+                <input class="w3-btn w3-green" type="submit" value="Save" />
+            </div>
+        </div>
+    </div>
+</EditForm>
+
